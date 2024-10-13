@@ -13,10 +13,10 @@ Team name: Kettőt fizet egyet kap
 
 ## Project Structure:
 * project_dir
-    * Dockerfile
-    * docker-compose.yml
-    * requirements.txt
-    * Data_preparation.ipynb
+    * Dockerfile: This file specifies which base image to use, which dependencies to install, and how to configure the application.
+    * docker-compose.yml: The docker-compose.yml file allows for the management and configuration of multiple Docker containers together. With this file, we can define the different services of our application (e.g., web server, database) and specify how they should communicate with each other.
+    * requirements.txt: The requirements.txt file contains the Python packages and their versions that the application uses. This file is used by the pip package manager to install dependencies.
+    * Data_preparation.ipynb: Notebook file running the aquisition and preparation of our data, along with showing analysis of our data's composition.
     * Readme.md
 
 ## Usage:
