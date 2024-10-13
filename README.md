@@ -39,11 +39,11 @@ Open the URL in a web browser, then open the `.ipynb` file and run the cells in 
 
 ## Notebook contents:
 In the `.ipynb` notebook contains the following sections:
-# Data Source:
+### Data Source:
 Shows that the images we use are stored in a huggingface repository the way of importing them, and shows the current image counts of the different classes.
-# Dataset:
+### Dataset:
 Loads the images into a DataModule that augments the training images to later improve training while keeping valuation and testing data unaugmented, all cropped to a uniform size.
-# Visualization:
+### Visualization:
 Shows some examples of what images and augments the CNN will use later on.
 
 ## Stopping the Container:
