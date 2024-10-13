@@ -3,4 +3,4 @@ torchvision
 matplotlib
 pytorch_lightning
 datasets
-random
+numpy

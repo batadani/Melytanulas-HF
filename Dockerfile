@@ -1,5 +1,5 @@
 # Use an official PyTorch image as a parent image
-FROM pytorch/pytorch:latest
+FROM python:3.9-slim-buster
 
 # Set the working directory in the container
 WORKDIR /app
