@@ -1,8 +1,9 @@
 # Image classification "in-the-wild"
 ## Description
-The goal of this project is to gather you own real-world image dataset with different types of objects in it and train an image classifier for solving it. Dataset :contaions: shoes, furnitures and books.
+The goal of this project is to gather you own real-world image dataset with different types of objects in it and train an image classifier for solving it. Our dataset contains the Book, Furniture and Shoe classes.
 
 ## Team info:
+Team name: Kettőt fizet egyet kap
 * Bata Dániel - B95Q0I
 * Bunda Boldizsár - F1LJLQ
 
