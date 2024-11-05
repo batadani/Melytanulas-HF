@@ -1,6 +1,9 @@
 torch
 torchvision
-matplotlib
-pytorch_lightning
+pytorch-lightning
 datasets
+wandb
+matplotlib
+seaborn
 numpy
+

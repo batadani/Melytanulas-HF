@@ -1,9 +1,8 @@
 # Image classification "in-the-wild"
 ## Description
-The goal of our project is to gather our own real-world image dataset with different types of objects in it and train an image classifier for solving it. Our dataset contains the Book, Furniture and Shoe classes.
+The goal of this project is to gather you own real-world image dataset with different types of objects in it and train an image classifier for solving it. Dataset :contaions: shoes, furnitures and books.
 
 ## Team info:
-Team name: Kettőt fizet egyet kap
 * Bata Dániel - B95Q0I
 * Bunda Boldizsár - F1LJLQ
 
@@ -13,11 +12,11 @@ Team name: Kettőt fizet egyet kap
 
 ## Project Structure:
 * project_dir
-    * **Dockerfile:** This file specifies which base image to use, which dependencies to install, and how to configure the application.
-    * **docker-compose.yml:** The docker-compose.yml file allows for the management and configuration of multiple Docker containers together. With this file, we can define the different services of our application (e.g., web server, database) and specify how they should communicate with each other.
-    * **requirements.txt:** The requirements.txt file contains the Python packages and their versions that the application uses. This file is used by the pip package manager to install dependencies.
-    * **Data_preparation.ipynb:** Notebook file running the aquisition and preparation of our data, along with showing analysis of our data's composition.
-    * **Readme.md**
+    * Dockerfile
+    * docker-compose.yml
+    * requirements.txt
+    * Data_preparation.ipynb
+    * Readme.md
 
 ## Usage:
 ### Clone this repository:
@@ -39,12 +38,19 @@ Open the URL in a web browser, then open the `.ipynb` file and run the cells in 
 
 ## Notebook contents:
 In the `.ipynb` notebook contains the following sections:
-### Data Source:
-Shows that the images we use are stored in a huggingface repository the way of importing them, and shows the current image counts of the different classes.
-### Dataset:
-Loads the images into a DataModule that augments the training images to later improve training while keeping valuation and testing data unaugmented, all cropped to a uniform size.
-### Visualization:
-Shows some examples of what images and augments the CNN will use later on.
+* **Data Source**:
+    The images are created in-house and saved in a private Hugging Face repository, split into training and test sets. An access token with read-only permission is used to access the repository.
+* **Dataset**:
+    The dataset is split with an 80:20 ratio, with augmentation applied only to training data to enhance model learning. No further data cleaning is necessary since only a few images are manually verified.
+* **Data Processing and Data Module Setup**:
+    Images are resized to a resolution of 128x128 pixels with specific transformations applied to training data, such as random zoom and flipping. Validation and test data are processed with consistent resizing and center cropping without random transformations, keeping them "clean" for accurate evaluation.
+* **Visualization**:
+    A function visualize_images is provided to display random samples from each dataset with the possibility of augmenting training data for visualization.
+* **Baseline Models**:
+    Two baseline models are created for comparison. The first model randomly selects a class, with an expected accuracy near 33% due to the three classes. The second model always predicts the most common class from the training set, providing a slightly higher accuracy than random guessing.
+* **Model Training and Evaluation**:
+    The model is set up using a MobileNetV2 architecture modified to classify images into three classes. Training is managed through PyTorch Lightning, with logging to Weights & Biases and early stopping based on validation accuracy. Accuracy and confusion matrix metrics are tracked for performance evaluation, and training and validation accuracy and loss are plotted.
 
+After training, the code plots the accuracy and loss trends for both training and validation sets, enabling performance visualization and identifying potential overfitting or underfitting.
 ## Stopping the Container:
 We are able to stop the container by pressing `Ctrl+C` in the terminal.
