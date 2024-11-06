@@ -12,6 +12,7 @@ The goal of this project is to gather you own real-world image dataset with diff
 
 ## Project Structure:
 * project_dir
+    * ImageClassification_Wild.ipynb
     * Dockerfile
     * docker-compose.yml
     * requirements.txt
